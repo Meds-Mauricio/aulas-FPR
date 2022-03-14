@@ -1,8 +1,3 @@
-.lista {
-    margin-bottom: 10px;
-    display: flex;
-}
-
-.lista div {
-    margin: 0 13px;
+p {
+    color: red;
 }
