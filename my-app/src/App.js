@@ -1,72 +1,77 @@
 import './App.css';
-
 function App() {
 
-    const familia = [
+    const casa = [
         {
-            nome: 'Mauricio',
-            telefone: '(11) 9586-7309',
-            idade: 15,
-            dataDeNascimento: '05/03/2007',
-            nomeDaMae: 'Custodia',
-            nomeDoPai: 'Adão',
+            quarto: 'cama',
+            sala: false,
+            cozinha: 'pia'
         },
         {
-            nome: 'Marcelo',
-            telefone: '(11) 86595-0696',
-            idade: 22,
-            dataDeNascimento: '04/02/2000',
-            nomeDaMae: 'Katia',
-            nomeDoPai: 'João',
+            quarto: 'travesseiro',
+            sala: true,
+            cozinha: 'armario',
         },
         {
-            nome: 'Paulo',
-            telefone: '(11) 9089-7876',
-            idade: 25,
-            dataDeNascimento: '26/11/1997',
-            nomeDaMae: 'Maria',
-            nomeDoPai: ''
+            quarto: 'colchão',
+            sala: false,
+            cozinha: 'mesa',
         },
         {
-            nome: 'Marcos',
-            telefone: '(11) 95674-0384',
-            idade: 34,
-            dataDeNascimento: '27/05/1988',
-            nomeDaMae: 'Patricia',
-            nomeDoPai: "Rogerio",
-        },
-        {
-            nome: 'Felipe',
-            telefone: '(11) 9373-8590',
-            idade: 17,
-            dataDeNascimento: '25/01/2013',
-            nomeDaMae: 'Andréia',
-            nomeDoPai: ''
+            quarto: 'travesseiro',
+            sala: true,
+            cozinha: 'cadeira',
         },
     ]
 
+    const frutas = [
+        {
+            nome: 'laranja',
+            tipo: "pêra",
+            id: '81fbc166-a60c-11ec-b909-0242ac120002',
+        },
+        {
+            nome: 'abacaxi',
+            tipo: "havaí",
+            id: 'bf983f2c-a60c-11ec-b909-0242ac120002',
+        },
+        {
+            nome: 'abacaxi',
+            tipo: "pérola",
+            id: 'c9c37318-a60c-11ec-b909-0242ac120002',
+        },
+    ]
+
+    const filtrando = casa.filter(casaComodo => {
+        return casaComodo.sala === false
+    })
+
+    const filtrandoFrutas = frutas.filter(frutasLista => {
+        return frutasLista.nome === 'abacaxi'
+    })
+
     return (
         <div className="App">
-            {
-                familia.map(pessoas => {//sempre setar um nome para o map ex:. alimento.map(lanche =>{})
+            <>
+                {
+                    filtrando.map((casaComodo, index) => {
+                        return (
+                            <p key={index}>{casaComodo.quarto}</p>
+                        )
+                    })
+                }
 
-                    return (
-                        <div className='lista'>
-                            <div>
-                                <p>Nome: {pessoas.nome}</p>
-                                <p>Idade: {pessoas.idade}</p>
-                                <p>Data de Nascimento: {pessoas.dataDeNascimento}</p>
-                                <p>Telefone: {pessoas.telefone}</p>
-                                <p> Nome da Mãe: {pessoas.nomeDaMae}</p>
-                                {pessoas.nomeDoPai && <p>Nome do Pai: {pessoas.nomeDoPai}</p>}
-                            </div>
-                        </div>
-                    )
-                })
-            }
+                {
+                    filtrandoFrutas.map((frutasLista) => {
+                        return (
+                            <p key={frutasLista.id}>{frutasLista.nome}</p>
+                        )
+                    })
+                }
+            </>
         </div>
-
     );
+
 }
 
 export default App;
