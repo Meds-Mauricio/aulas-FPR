@@ -45,7 +45,6 @@ function App() {
     const filtrando = casa.filter(casaComodo => {
         return casaComodo.sala === false
     })
-    console.log(filtrando)
 
     const filtrandoFrutas = frutas.filter(frutasLista => {
         return frutasLista.nome === 'abacaxi'
