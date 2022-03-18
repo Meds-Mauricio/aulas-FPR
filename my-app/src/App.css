@@ -6,3 +6,12 @@
 .lista div {
     margin: 0 13px;
 }
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+};
