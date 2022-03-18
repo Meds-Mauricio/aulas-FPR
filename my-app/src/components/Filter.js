@@ -64,7 +64,11 @@ export function Filter() {
                 {
                     filtrandoFrutas.map((frutasLista) => {
                         return (
+                            <>
                             <p key={frutasLista.id}>{frutasLista.nome}</p>
+                            <p key={frutasLista.id}>{frutasLista.tipo}</p>
+                            <p key={frutasLista.id}>{frutasLista.id}</p>
+                            </>
                         )
                     })
                 }
