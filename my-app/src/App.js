@@ -1,77 +1,125 @@
-import './App.css';
-function App() {
+import React from 'react'
 
-    const casa = [
+export default function App() {
+    const igreja = [
         {
-            quarto: 'cama',
-            sala: false,
-            cozinha: 'pia'
+            pastor: "Manoel",
+            discipulador: "true",
+            lider: [
+                {
+                    nome: "Mauricio",
+                    dataNascimento: "23/09/1999",
+                    endereco: "rua Brasil"
+                },
+
+            ],
+
+            liderTreinamento: [
+                {
+                    celula33: "Gabriel",
+                    celula23: true
+                },
+
+                {
+                    celula33: "Marcos",
+                    celula23: false
+                }
+            ],
+        },
+
+
+        {
+            pastor: "Gilberto",
+            discipulador: false,
+            lider: [
+                {
+                    nome: "Evandro",
+                    dataNascimento: "23/06/1997",
+                    endereco: "rua agarapé"
+                },
+            ],
+
+            liderTreinamento: [
+                {
+                    celula33: "Ivan",
+                    celula23: true
+                },
+
+                {
+                    celula33: "Carlos",
+                    celula23: false
+                }
+            ],
         },
         {
-            quarto: 'travesseiro',
-            sala: true,
-            cozinha: 'armario',
+            pastor: "Jeremias",
+            discipulador: true,
+            lider: [
+                {
+                    nome: "rogerio",
+                    dataNascimento: "13/07/2000",
+                    endereco: "rua aráras"
+                },
+            ],
+
+            liderTreinamento: [
+                {
+                    celula33: "Ricardo",
+                    celula23: false
+                },
+
+                {
+                    celula33: "Mario",
+                    celula23: false
+                }
+            ],
         },
         {
-            quarto: 'colchão',
-            sala: false,
-            cozinha: 'mesa',
-        },
-        {
-            quarto: 'travesseiro',
-            sala: true,
-            cozinha: 'cadeira',
+            pastor: "Lincoln",
+            discipulador: true,
+            lider: [
+                {
+                    nome: "Natan",
+                    dataNascimento: "02/02/1995",
+                    endereco: "rua ypé"
+                },
+            ],
+
+            liderTreinamento: [
+                {
+                    celula33: "Vinicius",
+                    celula23: true
+                },
+
+                {
+                    celula33: "Carlos",
+                    celula23: false
+                }
+            ],
         },
     ]
-
-    const frutas = [
-        {
-            nome: 'laranja',
-            tipo: "pêra",
-            id: '81fbc166-a60c-11ec-b909-0242ac120002',
-        },
-        {
-            nome: 'abacaxi',
-            tipo: "havaí",
-            id: 'bf983f2c-a60c-11ec-b909-0242ac120002',
-        },
-        {
-            nome: 'abacaxi',
-            tipo: "pérola",
-            id: 'c9c37318-a60c-11ec-b909-0242ac120002',
-        },
-    ]
-
-    const filtrando = casa.filter(casaComodo => {
-        return casaComodo.sala === false
-    })
-
-    const filtrandoFrutas = frutas.filter(frutasLista => {
-        return frutasLista.nome === 'abacaxi'
-    })
 
     return (
-        <div className="App">
-            <>
-                {
-                    filtrando.map((casaComodo, index) => {
-                        return (
-                            <p key={index}>{casaComodo.quarto}</p>
-                        )
-                    })
-                }
+        <>
+            {igreja.map((aguaViva, index) => (
+                <div key={index}>
+                    <h1>{aguaViva.pastor}</h1>
 
-                {
-                    filtrandoFrutas.map((frutasLista) => {
-                        return (
-                            <p key={frutasLista.id}>{frutasLista.nome}</p>
-                        )
-                    })
-                }
-            </>
-        </div>
-    );
+                    {aguaViva.lider.map((liderDados) => (
+                        <ul>
+                            <li>{liderDados.nome}</li>
+                            <li>{liderDados.dataNascimento}</li>
+                            <li>{liderDados.endereco}</li>
+                        </ul>
+                    ))}
 
+                    {aguaViva.liderTreinamento.map((dados) => (
+                        <ul>
+                            <li>{dados.celula33}</li>
+                        </ul>
+                    ))}
+                </div>
+            ))}
+        </>
+    )
 }
-
-export default App;
