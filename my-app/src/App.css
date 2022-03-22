@@ -1,8 +1,12 @@
-.lista {
+.olimpiadas {
     margin-bottom: 10px;
     display: flex;
 }
 
-.lista div {
+.olimpiadas {
+    p {
     margin: 0 13px;
+    font-size: 10px;
+    color: blue;
 }
+S}

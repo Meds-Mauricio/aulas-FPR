@@ -1,125 +1,78 @@
 import React from 'react'
 
 export default function App() {
-    const igreja = [
+
+  const olimpiadas = [
+    {
+      nome: 'Rogerio',
+      atleta: 'Ronaldo',
+      dataNascimento: '23/08/1998',
+      informacao: [
         {
-            pastor: "Manoel",
-            discipulador: "true",
-            lider: [
-                {
-                    nome: "Mauricio",
-                    dataNascimento: "23/09/1999",
-                    endereco: "rua Brasil"
-                },
-
-            ],
-
-            liderTreinamento: [
-                {
-                    celula33: "Gabriel",
-                    celula23: true
-                },
-
-                {
-                    celula33: "Marcos",
-                    celula23: false
-                }
-            ],
-        },
-
-
-        {
-            pastor: "Gilberto",
-            discipulador: false,
-            lider: [
-                {
-                    nome: "Evandro",
-                    dataNascimento: "23/06/1997",
-                    endereco: "rua agarapé"
-                },
-            ],
-
-            liderTreinamento: [
-                {
-                    celula33: "Ivan",
-                    celula23: true
-                },
-
-                {
-                    celula33: "Carlos",
-                    celula23: false
-                }
-            ],
+          idade: '22',
+          modalidade: 'Futebol',
         },
         {
-            pastor: "Jeremias",
-            discipulador: true,
-            lider: [
-                {
-                    nome: "rogerio",
-                    dataNascimento: "13/07/2000",
-                    endereco: "rua aráras"
-                },
-            ],
+          idade: '23',
+          modalidade: 'Basquete',
+        }
 
-            liderTreinamento: [
-                {
-                    celula33: "Ricardo",
-                    celula23: false
-                },
 
-                {
-                    celula33: "Mario",
-                    celula23: false
-                }
-            ],
+      ]
+    },
+
+    {
+      nome: 'Rodrigo',
+      atleta: 'Oscar',
+      dataNascimento: '23/10/1998',
+      informacao: [
+        {
+          idade: '23',
+          modalidade: 'Futebol',
         },
         {
-            pastor: "Lincoln",
-            discipulador: true,
-            lider: [
-                {
-                    nome: "Natan",
-                    dataNascimento: "02/02/1995",
-                    endereco: "rua ypé"
-                },
-            ],
+          idade: '22',
+          modalidade: 'Basquete',
+        }
 
-            liderTreinamento: [
-                {
-                    celula33: "Vinicius",
-                    celula23: true
-                },
 
-                {
-                    celula33: "Carlos",
-                    celula23: false
-                }
-            ],
-        },
-    ]
+      ]
+    },
 
-    return (
-        <>
-            {igreja.map((aguaViva, index) => (
-                <div key={index}>
-                    <h1>{aguaViva.pastor}</h1>
+  ]
 
-                    {aguaViva.lider.map((liderDados) => (
-                        <ul>
-                            <li>{liderDados.nome}</li>
-                            <li>{liderDados.dataNascimento}</li>
-                            <li>{liderDados.endereco}</li>
-                        </ul>
-                    ))}
 
-                    {aguaViva.liderTreinamento.map((dados) => (
-                        <ul>
-                            <li>{dados.celula33}</li>
-                        </ul>
-                    ))}
-                </div>
-            ))}
-        </>
-    )
+  return (
+    <>
+      {
+        olimpiadas.map((olimpiadas, index) => {
+          const jogo = olimpiadas.informacao.filter((jeesp) => {
+            return jeesp.modalidade === 'Basquete'
+          })
+          return (
+            <div key={index}>
+              <div>
+                <p>{olimpiadas.modalidade}</p>
+                <p>{olimpiadas.atleta}</p>
+                <p>{olimpiadas.atleta}</p>
+                <p>{olimpiadas.dataNascimento}</p>
+                <p>{olimpiadas.nome}</p>
+
+              </div>
+
+              {jogo.map((jogos) => {
+                return (
+                  <div>
+                    <p>{jogos.idade}</p>
+                    <p>{jogos.modalidade}</p>
+                  </div>
+
+                )
+              })}
+            </div>
+          )
+        })
+      }
+    </>
+  )
 }
