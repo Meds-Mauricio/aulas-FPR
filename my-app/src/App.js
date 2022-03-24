@@ -1,78 +1,29 @@
 import React from 'react'
+//OnClick => a ação ocorre no click;
+//Onchange => a ação ocorre na mudança;
+{/* <button onClick={() => { alert() }}></button> */ }
+//fazer um input com onchange que, o que a pessoa digitar, ela vai somar com uma variavél,
+// com valor 4 e vai retornar o alert com o resultado.
+
+//fazer um click numa div com um texto qualquer que retorne um alert com o texto,
+// "Você conseguiu o texto de uma variavél.
 
 export default function App() {
 
-  const olimpiadas = [
-    {
-      nome: 'Rogerio',
-      atleta: 'Ronaldo',
-      dataNascimento: '23/08/1998',
-      informacao: [
-        {
-          idade: '22',
-          modalidade: 'Futebol',
-        },
-        {
-          idade: '23',
-          modalidade: 'Basquete',
-        }
+    const mensagem = 'Você conseguiu'
+    const number = 4
 
+    return (
+        <div classNome="App">
 
-      ]
-    },
+..            <form>
+                <label>digite um numero:</label>
+                <input onChange={(e) => { alert(JSON.parse(e.target.value) + number) }} />
+            </form>
 
-    {
-      nome: 'Rodrigo',
-      atleta: 'Oscar',
-      dataNascimento: '23/10/1998',
-      informacao: [
-        {
-          idade: '23',
-          modalidade: 'Futebol',
-        },
-        {
-          idade: '22',
-          modalidade: 'Basquete',
-        }
+            <br />
 
-
-      ]
-    },
-
-  ]
-
-
-  return (
-    <>
-      {
-        olimpiadas.map((olimpiadas, index) => {
-          const jogo = olimpiadas.informacao.filter((jeesp) => {
-            return jeesp.modalidade === 'Basquete'
-          })
-          return (
-            <div key={index}>
-              <div>
-                <p>{olimpiadas.modalidade}</p>
-                <p>{olimpiadas.atleta}</p>
-                <p>{olimpiadas.atleta}</p>
-                <p>{olimpiadas.dataNascimento}</p>
-                <p>{olimpiadas.nome}</p>
-
-              </div>
-
-              {jogo.map((jogos) => {
-                return (
-                  <div>
-                    <p>{jogos.idade}</p>
-                    <p>{jogos.modalidade}</p>
-                  </div>
-
-                )
-              })}
-            </div>
-          )
-        })
-      }
-    </>
-  )
+            <div className='click' onClick={() => { alert([mensagem]) }}>click</div>
+        </div>
+    )
 }
