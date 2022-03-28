@@ -23,7 +23,7 @@ export default function App() {
 
             <br />
 
-            <div className='click' onClick={() => { alert([mensagem]) }}>click</div>
+            <div className='click' onClick={() => { alert(mensagem) }}>click</div>
         </div>
     )
 }
