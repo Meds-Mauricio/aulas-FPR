@@ -5,7 +5,7 @@ export default function Link({happy}) {
 
   return (
     
-    <section className='teste'>
+    <section className='test'>
         {happy && <p>Peace</p>}        
     </section>
   )

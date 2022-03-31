@@ -1,12 +1,10 @@
 import React from 'react'
 
-export default function Card({texto, link}) {
+export default function Card({text}) {
 
   return (
-    
-    <section className='cartão'>
-        <p>{texto}</p>
-        { link && <a>Surpresa</a> }
+    <section className='text'>
+        <p>{text}</p>
     </section>
   )
 }
