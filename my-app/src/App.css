@@ -1,12 +1,6 @@
-.olimpiadas {
+.teste {
     margin-bottom: 10px;
-    display: flex;
-}
-
-.olimpiadas {
-    p {
-    margin: 0 13px;
-    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
     color: blue;
 }
-S}
