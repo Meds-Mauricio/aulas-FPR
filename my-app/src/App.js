@@ -1,5 +1,5 @@
 import './App.css';
-import { Casa } from './components/Trabalho';
+import { Casa, Click } from './Utils';
 
 function App() {
    const Mensagem = 'é muito legal';
@@ -12,8 +12,8 @@ function App() {
 
     return (
         <form>
-            <input onChange={(e) => { Casa(e.target.value, Mensagem) }} />
-            {/* <p>{Number + Mensagem}</p> */}
+            <input onChange={(e) => { Casa(e.target.value) }} />
+            <button onClick= { Click(Numero) }>click</button>
         </form>
     )
 }
