@@ -13,7 +13,7 @@ export default function App() {
             <Card text='bedroom text' />
             
             <Link happy={true} />
-            <Link happy={true} />
+            <Link happy={false} />
         </div>
     );
 }
