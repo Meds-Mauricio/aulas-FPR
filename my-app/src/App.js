@@ -1,19 +1,20 @@
 import './App.css';
+import { Casa } from './components/Trabalho';
 
-import Card from './components/Card';
-import Link from './components/Link';
+function App() {
+   const Mensagem = 'é muito legal';
+   const Numero = 8; 
 
-export default function App() {
+    // cria uma função externa que chame o numero digitado no input no console.log acrtescentando 
+    // a mensagem --é muito louco--
+
+    //passar duas variáveis para uma segunda função onde elas retornem dentro de um alert depois do click
+
     return (
-
-        <div className="App">
-            <Card text='first text'/>
-            <Card text='second text' />
-            <Card text='third text' />
-            <Card text='bedroom text' />
-            
-            <Link happy={true} />
-            <Link happy={true} />
-        </div>
-    );
+        <form>
+            <input onChange={(e) => { Casa(e.target.value, Mensagem) }} />
+            {/* <p>{Number + Mensagem}</p> */}
+        </form>
+    )
 }
+export default App;
