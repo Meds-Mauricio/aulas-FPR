@@ -7,7 +7,7 @@ export default function App() {
     return (
 
         <div className="App">
-            <Card text='first text'/>
+            <Card text='first text' />
             <Card text='second text' />
             <Card text='third text' />
             <Card text='bedroom text' />
