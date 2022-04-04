@@ -1,9 +1,9 @@
 import './App.css';
-import { Casa, Click } from './Utils';
+import { Mercado, Click } from './Utils';
 
 function App() {
-   const Mensagem = 'é muito legal';
-   const Numero = 8; 
+const mensagem = 'é muito bom';
+const doce =  'chocolate';
 
     // cria uma função externa que chame o numero digitado no input no console.log acrtescentando 
     // a mensagem --é muito louco--
@@ -12,8 +12,8 @@ function App() {
 
     return (
         <form>
-            <input onChange={(e) => { Casa(e.target.value) }} />
-            <button onClick= { Click(Numero) }>click</button>
+            <input onChange={(e) => Mercado(e.target.value)} />
+            <button onClick={() => Click(doce, mensagem)}>click</button>
         </form>
     )
 }

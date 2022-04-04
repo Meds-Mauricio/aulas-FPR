@@ -1,6 +1,7 @@
-export const Casa = (numero) => {
-    console.log(`${numero} é muito louco`)
+export const Mercado = (brinquedo) => {
+    console.log(`${brinquedo} é muito louco`)
 }
-export const Click = (numero) => {
-    alert(`${numero} é muito louco`)
+
+export const Click = (doce, mensagem) => {
+    alert(`${doce}  ${mensagem}`)
 }
