@@ -1,19 +1,19 @@
 import './App.css';
+import Esporte from './components/Esporte';
+import { olimpiadas } from './mock';
 
-import Card from './components/Card';
-import Link from './components/Link';
-
-export default function App() {
-    return (
-
-        <div className="App">
-            <Card text='first text' />
-            <Card text='second text' />
-            <Card text='third text' />
-            <Card text='bedroom text' />
-            
-            <Link happy={true} />
-            <Link happy={false} />
-        </div>
-    );
-}
+export default function App( ) {
+        return (
+            <div className="App">
+                {olimpiadas.esporte.map((jogos) => {
+                    return (
+                        <Esporte
+                            baskete={jogos.baskete}
+                            boxe={jogos.boxe}
+                            futebol={jogos.futebol}
+                        />
+                    )
+                })}
+            </div>
+        );
+    }
