@@ -1,20 +1,24 @@
 import './App.css';
-import { Mercado, Click } from './Utils';
+import { loja, igreja } from './utils/loja';
 
+//quero que voce faça uma condição que o valor digitado num input for -0-Guitarra-- console.log tem cordas,
+//e digitar --Bateria-- console.log tem pedal, e se você digitar --Microfone-- coloca tem fios, 
+//(nada) não existe instrumento.
+
+//quero que faça um console com switch case que faça algo com 3 opções, 
+//e uma opção para quando não atender as 3 opções.
 function App() {
-const mensagem = 'é muito bom';
-const doce =  'chocolate';
-
-    // cria uma função externa que chame o numero digitado no input no console.log acrtescentando 
-    // a mensagem --é muito louco--
-
-    //passar duas variáveis para uma segunda função onde elas retornem dentro de um alert depois do click
 
     return (
-        <form>
-            <input onChange={(e) => Mercado(e.target.value)} />
-            <button onClick={() => Click(doce, mensagem)}>click</button>
-        </form>
+            <form class='input'>
+                    <div class='input-1'>
+                        <input onChange={(e) => loja(e.target.value)} placeholder='digite o instrumento'/>
+                    </div>
+
+                    <div class='input-2'>
+                        <input onChange={(e) => igreja(e.target.value)} placeholder='digite o nome do Pr.'/>
+                    </div>
+            </form>
     )
 }
 export default App;

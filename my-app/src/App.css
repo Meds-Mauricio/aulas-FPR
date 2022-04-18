@@ -1,19 +1,20 @@
-.test {
-    margin-bottom: 10px;
-    font-weight: bolder;
-    margin-left: 10px;
-    color: rgba(214, 224, 220, 0.932);
-    background-color: darkred;
-    width: 8rem;
-    text-align: center;
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form {
+    margin: 1rem;
+    display: flex;
+    margin-bottom: 2rem;
+    height: auto;
 }
 
-.text {
-    margin-bottom: 10px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: rgb(15, 4, 4);
-    background-color: dodgerblue;
-    width: 8rem;
-    text-align: center;
+.input {
+    display: flex;
+    flex-direction: column;    
+}
+
+.input-1 {
+margin-bottom: 1rem;
 }
