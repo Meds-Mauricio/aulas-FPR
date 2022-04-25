@@ -1,20 +1,27 @@
-*{ 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-form {
-    margin: 1rem;
-    display: flex;
-    margin-bottom: 2rem;
-    height: auto;
+
+.box {
+    width: 300px;
 }
 
-.input {
+.frase {
     display: flex;
-    flex-direction: column;    
+    margin: 10px 10px;
+    width: 221px;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
 }
 
-.input-1 {
-margin-bottom: 1rem;
+.matematica {
+    display: flex;
+    margin: 10px 10px;
+    width: 80px;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
 }

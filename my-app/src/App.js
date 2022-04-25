@@ -1,17 +1,32 @@
 import './App.css';
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Lojas from './pages/loja';
-import Home from './pages/home';
+import React, { useState } from 'react';
 
 function App() {
+    const [pronome, setPronome] = useState('nós vamos')
+    const [esporte, setEsporte] = useState('futebol')
+    const [ multiplicar, setMultiplicar] = useState(1)
+
+    function mudar() {
+        setPronome('eles vão')
+        setEsporte('basquete')
+    }
+
+    function contador() {
+        setMultiplicar(multiplicar * 4)
+    }
+
     return (
-        <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/lojas' element={<Lojas />} />
-        </Routes>
-      </BrowserRouter>
+        <div className="box">
+            <div className='frase'>
+                <p>{pronome} jogar {esporte}.</p>
+                <button onClick={() => mudar()}>Trocar</button>
+            </div>
+
+            <div className='matematica'>
+                {multiplicar}
+                <button onClick={() => setMultiplicar(multiplicar * 4)}>Trocar</button>
+            </div>
+        </div>
     )
 }
 export default App;
