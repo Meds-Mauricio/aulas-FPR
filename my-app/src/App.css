@@ -1,12 +1,27 @@
-.olimpiadas {
-    margin-bottom: 10px;
-    display: flex;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.olimpiadas {
-    p {
-    margin: 0 13px;
-    font-size: 10px;
-    color: blue;
+.box {
+    width: 300px;
 }
-S}
+
+.frase {
+    display: flex;
+    margin: 10px 10px;
+    width: 221px;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.matematica {
+    display: flex;
+    margin: 10px 10px;
+    width: 80px;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+}
