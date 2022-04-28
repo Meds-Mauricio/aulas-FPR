@@ -1,32 +1,9 @@
-import './App.css';
-import React, { useState } from 'react';
+import './App.css'
+import Home from './pages/home';
+import React from 'react'
 
-function App() {
-    const [pronome, setPronome] = useState('nós vamos')
-    const [esporte, setEsporte] = useState('futebol')
-    const [ multiplicar, setMultiplicar] = useState(1)
-
-    function mudar() {
-        setPronome('eles vão')
-        setEsporte('basquete')
-    }
-
-    function contador() {
-        setMultiplicar(multiplicar * 4)
-    }
-
+export default function App() {
     return (
-        <div className="box">
-            <div className='frase'>
-                <p>{pronome} jogar {esporte}.</p>
-                <button onClick={() => mudar()}>Trocar</button>
-            </div>
-
-            <div className='matematica'>
-                {multiplicar}
-                <button onClick={() => setMultiplicar(multiplicar * 4)}>Trocar</button>
-            </div>
-        </div>
+        <Home />
     )
 }
-export default App;
