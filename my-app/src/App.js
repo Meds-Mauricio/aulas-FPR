@@ -1,6 +1,6 @@
 import React from 'react'
-import Time from './pages/time'
-import Empresa from './pages/empresa'
+import Time from './components/Time'
+import Empresa from './components/Empresa'
 import './App.css';
 
 export default function App() {
