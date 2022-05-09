@@ -5,7 +5,7 @@ import Home from '../../components/Home';
 // montar um link que tenha 3 opções de parâmetro, vai exibir um conteudo
 // diferente para cada caso
 
-export default function Lojas() {
+export default function setorFeminina() {
     const url = window.location.href
     const splitLoja = url.split('&')
     const splitLoja1 = splitLoja[0].split('loja=')[1]
