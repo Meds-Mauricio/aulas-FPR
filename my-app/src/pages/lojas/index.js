@@ -12,8 +12,8 @@ export default function Lojas() {
     const splitSlogan = splitLoja[1].split('slogan=')[1]
     const splitSetor = splitLoja[2].split('setor=')[1]
 
-    console.log(splitLoja, 'splitLoja')
-    console.log(splitSetor, 'splitSetor')
+    // console.log(splitLoja, 'splitLoja')
+    // console.log(splitSetor, 'splitSetor')
 
     const [loja, setLoja] = useState()
     const [setor, setSetor] = useState()
