@@ -1,106 +1,132 @@
+import Home from '../home';
 import React, { useState, useEffect } from 'react';
-import Home from '../../components/Home';
 
-//SPLIT
-// montar um link que tenha 3 opções de parâmetro, vai exibir um conteudo
-// diferente para cada caso
+// // // primeira pagina coloca 2 links mandando para duas paginas diferentes, 
+// // //tratar a condição do splint, e na outra voce vai tratar a condição da query string
+
+// // //Query string
+// // //montar um segundo link com 5 opçoes de parametro, voce vai exibir um conteudo Proprio,
+// // // condizente com os 5 parametros
 
 export default function Lojas() {
-    const url = window.location.href
-    const splitLoja = url.split('&')
-    const splitLoja1 = splitLoja[0].split('loja=')[1]
-    const splitSlogan = splitLoja[1].split('slogan=')[1]
-    const splitSetor = splitLoja[2].split('setor=')[1]
+    const params = new URLSearchParams(window.location.search);
+    let urlParams = undefined;
+    params.forEach((value, key) => {
+        urlParams = Object.assign({}, urlParams, {
+            [key]: value.toString()
+        });
+    });
+    console.log(urlParams, 'urlParams')
 
-    // console.log(splitLoja, 'splitLoja')
-    // console.log(splitSetor, 'splitSetor')
-
-    const [loja, setLoja] = useState()
-    const [setor, setSetor] = useState()
-    const [tipo, setTipo] = useState()
-
-    useEffect(() => {
-        if (splitLoja1 === "pernambucanas") {
-            setLoja(
-                <img src='https://www.vagasecursos.com/wp-content/uploads/pernambucanas.gif' />
+    const renderizarLojas = () => {
+        if (urlParams.loja === 'riachuello') {
+            return (
+                <img src='https://logodownload.org/wp-content/uploads/2014/06/riachuelo-logo-1.png' />
             )
-        }
-        else if (splitLoja1 === "americanas") {
-            setLoja(
-                <img src='https://e3ba6e8732e83984.cdn.gocache.net/uploads/image/file/657486/regular_4dda1ee4a4f732e5c02a2f06964fa45c.jpg' />
+        } else if (urlParams.loja === 'americanas') {
+            return (
+                <img src='https://kemp.com.br/wp-content/uploads/2020/03/banner-logo-lojas-americanas-2.png' />
             )
-        }
-        else if (splitLoja1 === "lojas100") {
-            setLoja(
-
-                <img src='https://www.lojascem.com.br/site/wp-content/uploads/2016/09/logo-lojas-cem.png' />
+        } else if (urlParams.loja === 'magazine luiza') {
+            return (
+                <img src='https://www.omninews.com.br/wp-content/uploads/2019/10/magazine-luiza-2.jpghttps://www.omninews.com.br/wp-content/uploads/2019/10/magazine-luiza-2.jpg' />
             )
+        } else {
+            return <h1>Não tem mais lojas</h1>
         }
-        else {
-            setLoja(
-                <h1>Tente novamente</h1>
-            )
-        }
-    }, []);
-
-    useEffect(() => {
-        if (splitSlogan === "danossacasaprasuacasa") {
-            setSetor(
-                <img src='https://1.bp.blogspot.com/-YK904eVuq_g/VWOSNyl9YJI/AAAAAAABYnw/UQoDEOXRYUc/s1600/casas%2Bslogan.jpg' />
-            )
-        }
-        else if (splitSlogan === "grandesmarcaspreçosbaixostodososdias") {
-            setSetor(
-                <img src='https://1.bp.blogspot.com/-WR734RsnCcg/Xvpv6djfbJI/AAAAAAABytw/CBhx6iQlwXEKAGGtdSkbeH4WdrocOopvgCLcBGAsYHQ/s1600/americanas%2Bslogan.jpg' />
-               
+    }
+    const renderizarCores = () => {
+        if (urlParams.cor === 'Azul') {
+            return (
+                <section className='azul'>
+                    <h1>azul</h1>
+                </section>
 
             )
-        }
-        else if (splitSlogan === "garantiadepreçosbaixos")
-         {
-            setSetor(
-                <img src='https://lh3.googleusercontent.com/p/AF1QipN7v-cle7gX5Vv8uHnIv0c7Pq_1JeOw0o5CXYAH=s1600-w400' />
-            )
-        }
-        else {
-            setSetor(
-                <h1>Tente novamente</h1>
-            )
-        }
-    }, []);
+        } else if (urlParams.cor === 'Amarelo') {
+            return (
+                <section className='amarelo'>
+                    <h1>amarelo</h1>
+                </section>
 
-    useEffect(() => {
-        if (splitSetor === "pernambucanasinfantil") {
-            setTipo(
-                <img src='https://photos.enjoei.com.br/conjunto-infantil-frio-70338031/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8yMTUzODkzOC81MGIwOWE5NDUyZDM2ZTVjZWIzNWUzOTVlMmM2ZTlhOC5qcGc' />
             )
-        }
-        else if (splitSetor === "americanasinfantil") {
-            setTipo(
-                <img src='https://blogdoanalia.shoppinganaliafranco.com.br/wp-content/uploads/2017/11/Moda_INF.jpg' />
+        } else if (urlParams.cor === 'Vermelho') {
+            return (
+                <section className='vermelho'>
+                    <h1>vermelho</h1>
+                </section>
+
             )
+        } else {
+            return <h1>não tem mais cores</h1>
         }
-        else if (splitSetor === "lojasceminfantil") {
-            setTipo(
-                <img src='https://blog.passarela.com.br/wp-content/uploads/2018/09/capamodainfantil.jpg' />
+    }
+    const renderizarComodos = () => {
+        if (urlParams.comodo === 'Cozinha') {
+            return (
+                <>
+                    <img src='https://casatema.vteximg.com.br/arquivos/ids/801663-300-300/image-c20c7b28d54747c58e837c6cf0e912bc.jpg?v=637486606465900000' />
+                </>
             )
-        }
-        else {
-            setTipo(
-                <h1>Tente novamente</h1>
+        } else if (urlParams.comodo === 'sala') {
+            return (
+                <>
+                    <img src='http://www.moveisplanejadosbauru.com.br/wp-content/uploads/2012/09/banner-salaestar1.jpg' />
+                </>
             )
+        } else if (urlParams.comodo === 'quarto') {
+            return (
+                <>
+                    <img src='https://blog.iazamoveisdemadeira.com.br/wp-content/uploads/2016/05/1_Quarto-de-casal.jpg' />
+                </>
+            )
+        } else {
+            return <h1>Não tem mais comodos</h1>
         }
-    }, []);
+    }
+    const renderizarFornecedores = () => {
+        if (urlParams.fornecedor === 'madeira-madeira') {
+            return (
+                <section>
+                    <h1>madeiramadeira</h1>
+                    <p>A melhor para você</p>
+                </section>
+            )
+        } else if (urlParams.fornecedor === 'bonatto') {
+            return (
+                <section>
+                    <h1>Móveis Bonatto</h1>
+                    <p>Qualidade com Estilo</p>
+                </section>
+            )
+        } else if (urlParams.fornecedor === 'philco') {
+            return (
+                <section>
+                    <h1>Philco</h1>
+                    <p>Tem coisas que só a Philco faz Pra você</p>
+                </section>
+            )
+        } else {
+            return <h1>não tem mais Fornecedores</h1>
+        }
+    }
 
     return (
-        <section className='imagens'>
-            <Home />
-            <div className='pernambucanas'>
-                {loja}
-                {setor}
-                {tipo}
+        <section className='lojasdiversas'>
+            <div className='lojas'>
+                {renderizarLojas()}
+            </div>
+
+            <div className='cores'>
+                {renderizarCores()}
+            </div>
+            <div className='comdos'>
+                {renderizarComodos()}
+            </div>
+
+            <div className='fornecedor'>
+                {renderizarFornecedores()}
             </div>
         </section>
     )
 }
-

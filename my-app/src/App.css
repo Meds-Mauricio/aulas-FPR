@@ -1,15 +1,13 @@
-*{ 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: aquamarine;
-    
 }
 
 .links {
     margin-top: 10px;
     display: flex;
-    width:  100%;
+    width: 100%;
     justify-content: space-around;
     font-size: 20px;
 }
@@ -44,6 +42,15 @@ a {
 
 .lojas img {
     display: flex;
-    width:180px;
+    width: 180px;
     margin: 13px;
+}
+
+.azul {
+    background: rgb(0, 247, 255);
+    ;
+}
+
+.amarelo {
+    background: yellow;
 }
