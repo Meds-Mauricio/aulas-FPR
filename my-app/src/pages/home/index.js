@@ -1,41 +1,34 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 export default function Home() {
-    const [loja, setLoja] = useState('selecione')
-    const [cor, setCor] = useState('selecione')
-    const [comodo, setComodo] = useState('selecione')
-    const [fornecedor, setFornecedor] = useState('selecione')
+    const [resposta, setResposta] = useState()
 
-    console.log(loja);
+    console.log(resposta && resposta.masculinas.tipo)
+
+    // fetch('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebol.json')
+    //     .then(response => response.json())
+    //     .then(data => setResposta(data));
+
+    useEffect(() => {
+        axios.get('https://teste-aula-metodos-1-default-rtdb.firebaseio.com/roupas.json').then((response) =>
+            setResposta(response.data)
+        )
+    }, [])
+//teste
     return (
-        <section>
-            <select onChange={(e) => setLoja(e.target.value)}>
-                <option value='selecione'>Selecione</option>
-                <option value='riachuello'>Riachuello</option>
-                <option value='americanas'>Americanas</option>
-                <option value='magazine-luiza'>Magazine Luiza</option>
-            </select>
-            <select onChange={(e) => setCor(e.target.value)}>
-                <option value='selecione'>Selecione</option>
-                <option value='azul'>Azul</option>
-                <option value='amarelo'>Amarelo</option>
-                <option value='vermelho'>Vermelho</option>
-            </select>
-            <select onChange={(e) => setComodo(e.target.value)}>
-                <option value='selecione'>Selecione</option>
-                <option value='cozinha'>Cozinha</option>
-                <option value='sala'>Sala</option>
-                <option value='quarto'>Quarto</option>
-            </select>
-            <select onChange={(e) => setFornecedor(e.target.value)}>
-                <option value='selecione'>Selecione</option>
-                <option value='madeira-madeira'>Madeira Madeira</option>
-                <option value='bonatto'>Bonatto</option>
-                <option value='philco'>Philco</option>
-            </select>
-            <button onClick={() => window.location.href = `/resultado?loja=${loja}&cor=${cor}&comodo=${comodo}&fornecedor=${fornecedor}`}>Filtrar</button>
-          
-        </section>
+        <>
+            {/* <h1>Roupas femininas</h1> */}
+                {/* {resposta && resposta.masculinas.tipo} */}
+                  {  
+                    Object.values(resposta && resposta).map(Roupas =>{
+                        return(
+                            <p>{Roupas.tipo}</p>
+                        )
+                    })
+                }
+
+        </>
     )
 }
