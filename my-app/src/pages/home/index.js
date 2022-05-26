@@ -1,34 +1,25 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Home() {
-    const [resposta, setResposta] = useState()
-
-    console.log(resposta && resposta.masculinas.tipo)
-
-    // fetch('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebol.json')
-    //     .then(response => response.json())
-    //     .then(data => setResposta(data));
-
+    const [resposta, setResposta] = useState([]);
     useEffect(() => {
-        axios.get('https://teste-aula-metodos-1-default-rtdb.firebaseio.com/roupas.json').then((response) =>
-            setResposta(response.data)
-        )
+        axios.get('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebol/corinthians.json')
+            .then(function (response) {
+                setResposta(response.data);
+            }
+            )
     }, [])
-//teste
+//test
     return (
-        <>
-            {/* <h1>Roupas femininas</h1> */}
-                {/* {resposta && resposta.masculinas.tipo} */}
-                  {  
-                    Object.values(resposta && resposta).map(Roupas =>{
-                        return(
-                            <p>{Roupas.tipo}</p>
-                        )
-                    })
-                }
-
-        </>
+        <section>
+            Teste<br />
+            {resposta && Object.values(resposta).map((item) => {
+                return (
+                    <p>{item.zagueiro}</p>
+                )
+            })}
+        </section>
     )
 }
+
