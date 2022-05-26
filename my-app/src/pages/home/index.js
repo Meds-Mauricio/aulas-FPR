@@ -4,22 +4,24 @@ import axios from 'axios'
 export default function Home() {
     const [resposta, setResposta] = useState([]);
     useEffect(() => {
-        axios.get('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebol/corinthians.json')
+        axios.get('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebol/saoPaulo.json')
             .then(function (response) {
                 setResposta(response.data);
             }
             )
     }, [])
-//test
+
     return (
-        <section>
-            Teste<br />
-            {resposta && Object.values(resposta).map((item) => {
-                return (
-                    <p>{item.zagueiro}</p>
-                )
-            })}
-        </section>
+        <>
+            <section className='cabecalho'>
+                <h1>Api de Times</h1>
+                {resposta && Object.values(resposta).map((item) => {
+                    return (
+                        <p>{item.atacante}</p>
+                    )
+                })}
+            </section>
+        </>
     )
 }
 

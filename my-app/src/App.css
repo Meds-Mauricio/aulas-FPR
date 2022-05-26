@@ -4,53 +4,28 @@
     box-sizing: border-box;
 }
 
-.links {
-    margin-top: 10px;
-    display: flex;
+.cabecalho {
     width: 100%;
-    justify-content: space-around;
-    font-size: 20px;
-}
-
-a {
-    display: flex;
-    margin-top: 10px;
-    color: white;
-    background-color: blue;
-    width: 110px;
-    height: 50px;
+    margin: 20px 20px;
+    padding: 10px;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.pernambucanas {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
-    margin: 10px;
-    width: 100%;
-    height: 200px;
-    justify-content: space-around;
-}
-
-.lojas {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: nowrap;
+    height: auto;
+    flex-wrap: wrap;
     flex-direction: column;
+    align-items: flex-start;
+
 }
 
-.lojas img {
-    display: flex;
-    width: 180px;
-    margin: 13px;
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.azul {
-    background: rgb(0, 247, 255);
-    ;
-}
-
-.amarelo {
-    background: yellow;
+.cabecalho p {
+    margin: 2rem;
+    color: red;
+    text-transform: uppercase;
 }
