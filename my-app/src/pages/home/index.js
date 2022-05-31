@@ -1,63 +1,56 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+// import { teste, Click } from "../home"
 
-export default function Home() {
+export default function home() {
     const [resposta, setResposta] = useState([]);
-    const [time, setTime] = useState([]);
-    const [atacante, setAtacante] = useState([]);
-    const [meioCampo, setMeioCampo] = useState([]);
-    const [zagueiro, setZagueiro] = useState([]);
-    const [goleiro, setgoleiro] = useState([]);
-    const [mapear, setMaper] = useState([]);
-    
+    const [teste, setTeste] = useState([])
+    const [pokemon, setPokemon] = useState([])
+
+
+    // console.log(teste);
+
     useEffect(() => {
-        axios.get('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebolsao.json')
+        axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=150')
             .then(function (response) {
-                setResposta(response.data);
-            })
-        
-    }, [mapear])
+                setResposta(response.data.results);
 
-    const cadastro = () => {
-        axios.post('https://exercicio-de-firebase-default-rtdb.firebaseio.com/futebolsaoPaulo.json', {
-            time: "time",
-            atacante: "atacante",
-            meioCampo: "meio campo",
-            zagueiro: "zagueiro",
-            goleiro: "goleiro"
-        })
-        .then(function (response) {
-            alert('o time foi cadastrado')
-            setMaper(!mapear)
-        }).catch(
-            alert('não conseguimos cadastrar o time ')
-        )
+            }
+            )
+    }, [])
+
+    const click = (url) => {
+        // console.log("resposta",resposta)
+        axios.get(url)
+            .then(function (response) {
+                setPokemon(response.data);
+
+            }
+            )
     }
+    // console.log(pokemon);
+
     return (
-        <>
-            <section className='cabecalho'>
-                <h1>Api de Times</h1>
-                <h2>Cadastramento de times para campeonato</h2>
-                <form>
-                    <label>Time</label><input onChange={(e) => setTime(e.target.value)}/><br />
-                    <label>Atacante</label><input onChange={(e) => setAtacante(e.target.value)}/><br />
-                    <label>Meio Campo</label><input onChange={(e) => setMeioCampo(e.target.value)}/><br />
-                    <label>zagueiro</label><input onChange={(e) => setZagueiro(e.target.value)}/><br />
-                    <label>goleiro</label><input onChange={(e) => setgoleiro(e.target.value)}/><br />
-                    <button onClick={(e) => {e.preventDefault() 
-                        cadastro()}}>Cadastrar</button>
-                </form>
 
-                {/* {resposta && Object.values(resposta).map((item) => {
-                    return (
-                        <p>{item.atacante}</p>
-                    )
-                })} */}
+        <section className='cabecalho'>
+            <h1>Api de pokemon</h1>
+            <p>{pokemon.name}</p>
+            <p>{pokemon.types.map((url))}</p>
+            <p>{pokemon.weight}</p>
+            <p>{pokemon.height}</p>
+            
 
+            {resposta && resposta.map((item) => {
+           console.log(teste)
+                return (
+                    <p onClick={() => click(item.url)}>{item.name}</p>
 
+                )
 
-            </section>
-        </>
+            })}
+        </section>
     )
+
 }
+
 
