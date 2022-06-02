@@ -4,8 +4,9 @@ import axios from 'axios'
 
 export default function home() {
     const [resposta, setResposta] = useState([]);
-    const [teste, setTeste] = useState([])
-    const [pokemon, setPokemon] = useState([])
+    const [teste, setTeste] = useState([]);
+    const [pokemon, setPokemon] = useState([]);
+    const [tipo, setTipo] = useState([]);
 
 
     // console.log(teste);
@@ -35,22 +36,24 @@ export default function home() {
         <section className='cabecalho'>
             <h1>Api de pokemon</h1>
             <p>{pokemon.name}</p>
-            <p>{pokemon.types.map((url))}</p>
+            <p>{pokemon.types.map((tipo))}</p>
+            {/* {resposta && resposta.map((tipo) => {
+                { console.log(tipo) }
+                return (
+                    <p onClick={() => click(tipo.url)}>{tipo.name}</p>
+                    )
+                })} */}
+
             <p>{pokemon.weight}</p>
             <p>{pokemon.height}</p>
             
-
             {resposta && resposta.map((item) => {
-           console.log(teste)
                 return (
                     <p onClick={() => click(item.url)}>{item.name}</p>
-
-                )
-
-            })}
+                    )
+                })}
         </section>
     )
-
 }
 
 
