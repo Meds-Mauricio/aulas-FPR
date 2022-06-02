@@ -20,12 +20,32 @@
 
 h1 {
     width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
+    text-align: initial;
+    margin-bottom: 10px;
+}
+ 
+.cadastramento {
+    width: 410px;
+    text-align: end;
 }
 
 .cabecalho p {
-    margin: 2rem;
+    margin: .3rem;
     color: red;
     text-transform: uppercase;
+}
+h2 {
+margin-top: 15px;
+ }
+
+form {
+    text-align: right;
+}
+
+input {
+    margin-left: 8px;
+}
+
+label {
+    margin: 0 10px;
 }
