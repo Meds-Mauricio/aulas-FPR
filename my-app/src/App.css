@@ -24,9 +24,14 @@ h1 {
     margin-bottom: 10px;
 }
  
-.cadastramento {
+/* .cadastramento {
     width: 410px;
     text-align: end;
+} */
+
+.edicao {
+    width: 410px;
+    text-align: initial;
 }
 
 .cabecalho p {
@@ -47,5 +52,5 @@ input {
 }
 
 label {
-    margin: 0 10px;
+    margin: 15px;
 }
