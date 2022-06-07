@@ -22,6 +22,9 @@ h1 {
     width: 100%;
     text-align: initial;
     margin-bottom: 10px;
+    color: red
+
+    
 }
  
 /* .cadastramento {
@@ -31,24 +34,42 @@ h1 {
 
 .edicao {
     width: 410px;
+    margin: 30px 25px;
     text-align: initial;
+    color: red;
 }
+
+.selecao {
+    background-color: #222;
+    height: 929px;
+}
+
+.button {
+    width: 410px;
+    margin: 30px 25px;
+}
+
 
 .cabecalho p {
     margin: .3rem;
     color: red;
     text-transform: uppercase;
 }
+
 h2 {
 margin-top: 15px;
+color: red
  }
 
 form {
     text-align: right;
+    color: red;
+    inline-size: 10px;
 }
 
 input {
     margin-left: 8px;
+    border-radius: 10px;
 }
 
 label {
