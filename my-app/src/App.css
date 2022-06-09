@@ -7,41 +7,20 @@
 .cabecalho {
     width: 100%;
     margin: 20px 20px;
-    padding: 10px;
-    text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
-    height: auto;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: flex-start;
-
+    align-items: center;
 }
 
 h1 {
     width: 100%;
-    text-align: initial;
+    text-align: center;
     margin-bottom: 10px;
-}
- 
-/* .cadastramento {
-    width: 410px;
-    text-align: end;
-} */
-
-.edicao {
-    width: 410px;
-    text-align: initial;
-}
-
-.cabecalho p {
-    margin: .3rem;
     color: red;
-    text-transform: uppercase;
 }
-h2 {
-margin-top: 15px;
- }
+
 
 form {
     text-align: right;
@@ -49,8 +28,32 @@ form {
 
 input {
     margin-left: 8px;
+    border-radius: 10px;
+    padding: 3px;
 }
 
 label {
     margin: 15px;
+    color: red;
+}
+
+button {
+    border-radius: 5px;
+    text-align: right;
+    margin-top: 5px;
+    width: 80px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+p {
+    font-weight: bold;
+    margin: 15px;
+}
+
+p span {
+    text-transform: uppercase;
+    margin: 0 3px;
+    color: red;
 }
