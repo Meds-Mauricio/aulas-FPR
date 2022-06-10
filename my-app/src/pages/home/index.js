@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function Home() {
     const nome = () => {
-        localStorage.setItem('entrada', 'otavio');
+        localStorage.setItem('entrada', 'mauricio');
     }
 
     const [numero, setNumero] = useState()
