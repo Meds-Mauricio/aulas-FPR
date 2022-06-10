@@ -12,13 +12,3 @@ export default function Inscritos() {
         </>
     )
 }
-
-import React from 'react'
-
-export default function Inscritos() {git git
-  return (
-    <>
-
-    </>
-  )
-}

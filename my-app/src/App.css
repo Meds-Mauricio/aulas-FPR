@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    background-color: darkslategray;
+}
+
 .cabecalho {
     width: 100%;
     margin: 20px 20px;
@@ -21,15 +31,11 @@ h1 {
     color: red;
 }
 
-
-form {
-    text-align: right;
-}
-
 input {
     margin-left: 8px;
     border-radius: 10px;
     padding: 3px;
+    width: 100px;
 }
 
 label {
@@ -56,4 +62,13 @@ p span {
     text-transform: uppercase;
     margin: 0 3px;
     color: red;
+}
+
+.resultado {
+    font-weight: bold;
+    margin: 15px;
+}
+.resultado p {
+    color: blue;
+    font-size: 25px;
 }

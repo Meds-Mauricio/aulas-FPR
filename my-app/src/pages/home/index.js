@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState } from 'react'
+
 function Home() {
-    const [entrada, setEntrada] = useState()
-    const entrar = () => {
-        localStorage.setItem('entrada', entrada);
+    const nome = () => {
+        localStorage.setItem('entrada', 'otavio');
+    }
+
+    const [numero, setNumero] = useState()
+    const multipicar = () => {
+        sessionStorage.setItem('numero', numero)
     }
     return (
         <>
             <section>
-                <form className='cabecalho'>
-                    <h1>Login</h1>
-                    <label>entrada</label>
-                    <input onChange={(e) => setEntrada(e.target.value)} />
-:                    <button onClick={() => entrar()}>Entrar</button>
-                    <a href='/inscritos'>Inscritos</a>
-                </form>
+                <div className='cabecalho'>
+                    <button onClick={() => nome()}><a href='/inscritos'>entrar</a></button>
+                </div>
+                <div>
+                    <input onChange={(e) => setNumero(e.target.value)} />
+                    <button onClick={() => multipicar()}><a href='/resultados'>Resultado</a></button>
+                </div>
             </section>
         </>
     )
