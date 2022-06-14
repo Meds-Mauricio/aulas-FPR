@@ -1,26 +1,28 @@
 import React, { useState } from 'react'
 
 function Home() {
-    const nome = () => {
-        localStorage.setItem('entrada', 'mauricio');
+    const [ email, setEmail] = useState()
+    const [senha, setSenha] =useState()
+    
+    const entrar = () => {
+        localStorage.setItem('email', email);
+        localStorage.setItem('senha', senha);
+        window.location.href="/inscritos"
     }
 
-    const [numero, setNumero] = useState()
-    const multipicar = () => {
-        sessionStorage.setItem('numero', numero)
-    }
+  
     return (
         <>
             <section>
                 <div className='cabecalho'>
-                    <button onClick={() => nome()}><a href='/inscritos'>entrar</a></button>
-                </div>
-                <div>
-                    <input onChange={(e) => setNumero(e.target.value)} />
-                    <button onClick={() => multipicar()}><a href='/resultados'>Resultado</a></button>
+                    <h1>Login</h1>
+                    <label>email:</label>
+                    <input onChange={(e) => setEmail(e.target.value)} type='email'/>
+                    <label>Senha</label>
+                    <input  onChange={(e) => setSenha(e.target.value)} type='password'/>
+                    <button onClick={() => entrar()}>enviar</button>
                 </div>
             </section>
         </>
-    )
-}
-export default Home;
+    )}
+export default Home
